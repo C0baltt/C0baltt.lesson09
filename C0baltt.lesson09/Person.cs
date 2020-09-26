@@ -4,28 +4,30 @@ using System.Runtime.InteropServices;
 
 namespace C0baltt.lesson09
 {
-    public class Person
+    public class Person//объявляем класс Person
     {
-        public string SecondName { get; private set; }
-        private string Name { get; set; }
+        public string LastName { get; set; } //задаем функции get и set для LastName (вся необходимая=>
+                                             //=>настройка будет сделана средой автоматически)
+        public string FirstName { get; set; }//задаем функции get и set для FirstName (вся необходимая=>
+                                             //=>настройка будет сделана средой автоматически)
 
-        public string FullName
+        public string FullName//полное имя=>
         {
             get
             {
-                return SecondName + " " + Name;
+                return LastName + " " + FirstName;//=>возвращает строку вида "фамилия пробел имя"
             }
         }
-        public string ShortName
+        public string ShortName//=>возвращает строку вида "фамилия пробел и."
         {
             get
             {
-                return $"{SecondName} {Name.Substring(0, 1)}.";//Name.Substring(0,1) извлекает подстроку данного=>
+                return $"{LastName} {FirstName.Substring(0, 1)}.";//Name.Substring(0,1) извлекает подстроку данного=>
                                                                //=> экземпляра, подстрока начинается с данного знака, и длится указанное количество символов=>
                                                                //=>(0, 1) 0 - означает первый символ, 1 - длина =>
                                                                //=>строки, - один символ;=>
                                                                //=>$ - включает интерполяцию строк - она итерпретирует=>
-                                                               //=> содержимое внутри {}, как переменную, а не как текст
+                                                               //=> содержимое внутри "{}", как переменную, а не как текст
             }
         }
     }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace C0baltt.lesson09
 {
@@ -10,10 +6,14 @@ namespace C0baltt.lesson09
     {
         static void Main(string[] args)
         {
+            var name = Console.ReadLine();
             Person p = new Person();
-            p.SetName("");
+            ;
+            Console.ReadLine();
 
-            Console.WriteLine(p.GetName());
+            Console.WriteLine(p.FirstName);
+            Console.WriteLine(p.LastName);
+
             Console.ReadLine();
         }
     }
