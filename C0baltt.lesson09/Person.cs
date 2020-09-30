@@ -6,23 +6,30 @@ namespace C0baltt.lesson09
 {
     public class Person//объявляем класс Person
     {
-        public string LastName { get; set; } //задаем функции get и set для LastName (вся необходимая=>
+
+        public string SecondName { get; set; } //задаем функции get и set для SecondName (вся необходимая=>
                                              //=>настройка будет сделана средой автоматически)
-        public string FirstName { get; set; }//задаем функции get и set для FirstName (вся необходимая=>
+        public string Name { get; set; }//задаем функции get и set для Name (вся необходимая=>
                                              //=>настройка будет сделана средой автоматически)
+
+        public Person(string secondName, string name)//конструктор элементов класса
+        {
+            SecondName = secondName;
+            Name = name;
+        }
 
         public string FullName//полное имя=>
         {
             get
             {
-                return LastName + " " + FirstName;//=>возвращает строку вида "фамилия пробел имя"
+                return SecondName + " " + Name;//=>возвращает строку вида "фамилия пробел имя"
             }
         }
         public string ShortName//=>возвращает строку вида "фамилия пробел и."
         {
             get
             {
-                return $"{LastName} {FirstName.Substring(0, 1)}.";//Name.Substring(0,1) извлекает подстроку данного=>
+                return $"{SecondName} {Name.Substring(0, 1)}.";//Name.Substring(0,1) извлекает подстроку данного=>
                                                                //=> экземпляра, подстрока начинается с данного знака, и длится указанное количество символов=>
                                                                //=>(0, 1) 0 - означает первый символ, 1 - длина =>
                                                                //=>строки, - один символ;=>
@@ -35,7 +42,8 @@ namespace C0baltt.lesson09
 /* 
   public class Person
     {
-        public string SecondName { get; private set; }// равнозначно всему, что написано ниже
+        public string SecondName { get; private set; }//это сокращенные варианты свойств равнозначно всему,=>
+                                                      =>что написано ниже
 
         private string _name;
 
